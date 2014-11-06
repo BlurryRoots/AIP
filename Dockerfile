@@ -28,5 +28,6 @@ RUN apt-get install -y build-essential make g++
 ADD ./resources /src
 WORKDIR /src
 RUN npm install
-
+RUN npm install grunt
 RUN npm install -g grunt-cli
+

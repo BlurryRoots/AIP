@@ -9,6 +9,6 @@
 		"morgan": "~1",
 		"cookie-parser": "~1",
 		"body-parser": "~1",
-		"debug": "~0",
+		"debug": "~0"
 	}
 }
