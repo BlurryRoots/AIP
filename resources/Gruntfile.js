@@ -14,31 +14,22 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		develop: {
 			server: {
-				file: 'app.js'
+				file: 'index.coffee'
 			}
 		},
 		watch: {
 			options: {
 				nospawn: true,
-				livereload: reloadPort
+				livereload: true
 			},
 			js: {
 				files: [
 					'app.coffee',
 					'app/**/*.coffee',
 					'config/*.coffee'
-				],
-				tasks: ['develop', 'delayed-livereload']
+				]
 			},
-			views: {
-				files: [
-				'app/views/*.jade',
-				'app/views/**/*.jade'
-				],
-				options: {
-					livereload: reloadPort
-				}
-			}
+			tasks: ['develop', 'delayed-livereload']
 		}
 	});
 
@@ -46,11 +37,15 @@ module.exports = function (grunt) {
 	files = grunt.config('watch.js.files');
 	files = grunt.file.expand(files);
 
+	grunt.registerTask('develop', 'What and why?', function () {
+		grunt.log.ok('This is kinda bullshit?!');
+	});
+
 	grunt.registerTask('delayed-livereload', 'Live reload after the node server has restarted.', function () {
 		var done = this.async();
 		setTimeout(function () {
 			request.get('http://localhost:' + reloadPort + '/changed?files=' + files.join(','),  function(err, res) {
-				var reloaded = !err && res.statusCode === 200;
+				var reloaded = ! err && res.statusCode === 200;
 				if (reloaded) {
 					grunt.log.ok('Delayed live reload successful.');
 				}
@@ -62,6 +57,6 @@ module.exports = function (grunt) {
 		}, 500);
 	});
 
-	grunt.registerTask('default', ['develop', 'watch']);
+	grunt.registerTask('default', ['develop']);
 };
 

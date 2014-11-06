@@ -22,9 +22,11 @@ RUN curl -sL https://deb.nodesource.com/setup | bash -
 RUN apt-get update
 RUN apt-get install -y nodejs
 # Install grunt terminal tool globally
-RUN npm install -g grunt-cli
+RUN npm install -g grunt-cli nodemon
 
 # Need to use make while installing dependencies
 # for expressjs
 RUN apt-get install -y build-essential make g++
+
+ENTRYPOINT /bin/bash /src/start.sh
 
