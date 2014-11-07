@@ -1,7 +1,5 @@
 'use strict';
 
-var request = require('request');
-
 module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -11,7 +9,7 @@ module.exports = function (grunt) {
 				flatten: false,
 				cwd: 'app/',
 				src: ['**/*.coffee'],
-				dest: 'dist/',
+				dest: '../dist/',
 				ext: '.js'
 			}
 		}
