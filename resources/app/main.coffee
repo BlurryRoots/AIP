@@ -12,9 +12,9 @@ app.use cookieParser()
 app.use express.static(path.join(__dirname, "public"))
 
 [
-  "controllers/calendar"
-  "controllers/dashboard"
-  "controllers/home"
+  "./controllers/calendar"
+  "./controllers/dashboard"
+  "./controllers/home"
 ].forEach (routerPath) ->
   require(routerPath) app
   return

@@ -1,16 +1,9 @@
 index = (req, res) ->
-  res.render "layout/index",
-    title: "FlatOrganize"
-    partials:
-      navbar: "layout/navbar"
-      content: "sites/home/index"
+	res.send "Hello, this is a test."
+	return
 
-    h: "FlatOrganize"
-    sub: "WG-Planung einfach gemacht."
-
-  return
 init = (app) ->
   app.get "/", index
   return
-express = require("express")
+
 module.exports = init
