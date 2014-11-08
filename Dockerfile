@@ -21,8 +21,8 @@ RUN apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup | bash -
 RUN apt-get update
 RUN apt-get install -y nodejs
-# Install grunt terminal tool, nodemon and coffee-script globally
-RUN npm install -g grunt-cli nodemon coffee-script
+# Install grunt terminal tool and nodemon globally
+RUN npm install -g grunt-cli nodemon
 
 # Need to use make while installing dependencies
 # for expressjs
