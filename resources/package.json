@@ -10,7 +10,11 @@
 		"morgan": "~1",
 		"cookie-parser": "~1",
 		"body-parser": "~1",
-		"debug": "~0"
+		"debug": "~0",
+		"knex": "~0.7.3",
+		"bookshelf": "~0.7.9",
+		"pg": "~3.6.2",
+		"mocha": "~2.0.1"
 	},
 	"devDependencies": {
 		"grunt": "~0.4.5",
